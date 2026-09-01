@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workers Management | RAYP Farm</title>
+
+    <link rel="stylesheet" href="style.css">
+      <body style="
+    background-image: url('download.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h1>RAYP</h1>
+            <p>Farm Management System</p>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="dashboard.html">🏠 Dashboard</a>
+            <a href="income.html">💰 Income</a>
+            <a href="expenses.html">💸 Expenses</a>
+            <a href="workers.html" class="active">👨‍🌾 Workers</a>
+            <a href="inventory.html">📦 Inventory</a>
+            <a href="crops.html">🌱 Crops</a>
+            <a href="reports.html">📊 Reports</a>
+            <a href="settings.html">⚙️ Settings</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="btn-danger" onclick="logout()">
+                🚪 Logout
+            </button>
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Top Bar -->
+        <div class="top-bar">
+
+            <h2>👨‍🌾 Workers Management</h2>
+
+            <div class="user-profile">
+                <img id="userPhoto"
+                     src="images/default-profile.png"
+                     alt="Profile Photo">
+            </div>
+
+        </div>
+
+        <!-- Summary Card -->
+        <div class="summary-card">
+
+            <h3>Total Workers Salary</h3>
+            <h2 id="totalSalary">UGX 0</h2>
+
+        </div>
+
+        <!-- Form -->
+        <div class="form-container">
+
+            <div class="worker-form">
+
+                <input type="text" id="workerName" placeholder="Worker Name" required>
+
+                <input type="text" id="workerRole" placeholder="Role" required>
+
+                <input type="number" id="workerSalary" placeholder="Salary (UGX)" required>
+
+                <input type="tel" id="workerContact" placeholder="Contact" required>
+
+                <button onclick="saveWorker()">
+                    ➕ Save Worker
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Search -->
+        <div class="table-tools">
+
+            <input type="text" id="searchWorker" placeholder="🔍 Search Workers">
+
+        </div>
+
+        <!-- Table -->
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Salary</th>
+                        <th>Contact</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="workersTable"></tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="workers.js"></script>
+<script src="profile.js"></script>
+
+</body>
+
+</html>

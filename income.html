@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RAYP Farm | Income Management</title>
+
+<link rel="icon" href="logo.png">
+
+<link rel="stylesheet" href="style.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+</head>
+
+
+<body class="income-page">
+
+
+<div class="wrapper">
+
+
+
+<!-- ================= SIDEBAR ================= -->
+
+
+<aside class="sidebar">
+
+
+<div class="logo">
+
+<img src="logo.png" alt="RAYP Farm Logo">
+
+<h1>RAYP</h1>
+
+<p>Farm Management System</p>
+
+</div>
+
+
+
+
+<nav class="nav-menu">
+
+
+<a href="dashboard.html">
+
+<i class="fas fa-home"></i>
+
+Dashboard
+
+</a>
+
+
+<a href="income.html" class="active">
+
+<i class="fas fa-money-bill-wave"></i>
+
+Income
+
+</a>
+
+
+<a href="expenses.html">
+
+<i class="fas fa-file-invoice-dollar"></i>
+
+Expenses
+
+</a>
+
+
+<a href="workers.html">
+
+<i class="fas fa-users"></i>
+
+Workers
+
+</a>
+
+
+<a href="inventory.html">
+
+<i class="fas fa-box"></i>
+
+Inventory
+
+</a>
+
+
+<a href="crops.html">
+
+<i class="fas fa-seedling"></i>
+
+Crops
+
+</a>
+
+
+<a href="reports.html">
+
+<i class="fas fa-chart-line"></i>
+
+Reports
+
+</a>
+
+
+<a href="settings.html">
+
+<i class="fas fa-cog"></i>
+
+Settings
+
+</a>
+
+
+
+</nav>
+
+
+
+
+<div class="sidebar-footer">
+
+
+<button class="btn-danger" onclick="logout()">
+
+<i class="fas fa-sign-out-alt"></i>
+
+Logout
+
+</button>
+
+
+</div>
+
+
+
+</aside>
+
+
+
+
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+
+<main class="main">
+
+
+
+
+
+<!-- TOP BAR -->
+
+
+<header class="top-bar">
+
+
+<div class="page-title">
+
+<i class="fas fa-money-bill-trend-up"></i>
+
+Income Management
+
+</div>
+
+
+
+<div class="user-profile">
+
+
+<img id="userPhoto"
+
+src="images/default-profile.png"
+
+alt="Profile Photo">
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+
+
+<!-- SUMMARY -->
+
+
+<section class="cards">
+
+
+
+<div class="summary-card">
+
+
+<i class="fas fa-coins"></i>
+
+
+<h3>
+
+Total Income
+
+</h3>
+
+
+<h2 id="incomeTotal">
+
+UGX 0
+
+</h2>
+
+
+</div>
+
+
+
+
+
+<div class="summary-card">
+
+
+<i class="fas fa-calendar-day"></i>
+
+
+<h3>
+
+This Month
+
+</h3>
+
+
+<h2 id="monthlyIncome">
+
+UGX 0
+
+</h2>
+
+
+</div>
+
+
+
+
+
+<div class="summary-card">
+
+
+<i class="fas fa-list"></i>
+
+
+<h3>
+
+Income Records
+
+</h3>
+
+
+<h2 id="incomeCount">
+
+0
+
+</h2>
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ADD INCOME FORM -->
+
+
+<section class="form-section">
+
+
+<h2>
+
+<i class="fas fa-plus-circle"></i>
+
+Add New Income
+
+</h2>
+
+
+
+<br>
+
+
+
+<form id="incomeForm">
+
+
+
+<input
+
+type="text"
+
+id="source"
+
+placeholder="Income Source (e.g Coffee Sales)"
+
+required>
+
+
+
+
+<input
+
+type="number"
+
+id="amount"
+
+placeholder="Amount UGX"
+
+min="1"
+
+required>
+
+
+
+
+<input
+
+type="date"
+
+id="date"
+
+required>
+
+
+
+
+<button type="submit">
+
+<i class="fas fa-save"></i>
+
+Save Income
+
+</button>
+
+
+
+</form>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- INCOME RECORDS -->
+
+
+<section class="table-section">
+
+
+<h2>
+
+<i class="fas fa-history"></i>
+
+Income Records
+
+</h2>
+
+
+
+<br>
+
+
+
+<input
+
+type="text"
+
+id="searchIncome"
+
+placeholder="🔍 Search income records">
+
+
+
+
+
+<table>
+
+
+<thead>
+
+
+<tr>
+
+<th>Source</th>
+
+<th>Amount</th>
+
+<th>Date</th>
+
+<th>Action</th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+
+<tbody id="incomeTable">
+
+
+</tbody>
+
+
+
+</table>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+
+© 2026 <strong>RAYP Farm</strong>
+
+<br>
+
+Farm Monetary System
+
+
+</footer>
+
+
+
+
+
+</main>
+
+
+</div>
+
+
+
+
+
+
+<script src="auth.js"></script>
+
+<script src="profile.js"></script>
+
+<script src="income.js"></script>
+
+
+
+<script>
+
+
+document.getElementById("incomeForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>

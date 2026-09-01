@@ -1,0 +1,309 @@
+/* ===========================
+   GENERAL
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background-image:url("download (1).jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+/* Dark overlay */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.45);
+    z-index:-1;
+}
+
+/* ===========================
+   NAVIGATION
+=========================== */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:rgba(0,0,0,.75);
+    color:white;
+}
+
+.logo h2{
+    font-size:28px;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+.nav-links li{
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    padding:10px 15px;
+    border-radius:6px;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+    background:#2ecc71;
+}
+
+.logout-btn{
+    background:#e74c3c;
+}
+
+.logout-btn:hover{
+    background:#c0392b;
+}
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:40px auto;
+    background:rgba(255,255,255,.92);
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
+}
+
+/* ===========================
+   PROFILE
+=========================== */
+
+.profile-card{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.profile-card img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:4px solid #27ae60;
+    object-fit:cover;
+}
+
+.profile-card h3{
+    margin-top:10px;
+    color:#2c3e50;
+}
+
+.profile-card p{
+    color:#777;
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.title h1{
+    color:#27ae60;
+    font-size:35px;
+}
+
+.title p{
+    color:#555;
+    margin-top:8px;
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.form-container{
+    margin-bottom:30px;
+}
+
+#expenseForm{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.input-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.input-group label{
+    margin-bottom:6px;
+    font-weight:bold;
+}
+
+input,
+select{
+    padding:12px;
+    border:1px solid #bbb;
+    border-radius:8px;
+    outline:none;
+    font-size:16px;
+}
+
+input:focus,
+select:focus{
+    border-color:#27ae60;
+}
+
+/* Button */
+
+button{
+    background:#27ae60;
+    color:white;
+    border:none;
+    padding:13px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:17px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#219150;
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+.table-container{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+table th{
+    background:#27ae60;
+    color:white;
+    padding:15px;
+}
+
+table td{
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+table tr:nth-child(even){
+    background:#f8f8f8;
+}
+
+table tr:hover{
+    background:#eafaf1;
+}
+
+/* Delete button */
+
+.delete-btn{
+    background:#e74c3c;
+    padding:8px 12px;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.delete-btn:hover{
+    background:#c0392b;
+}
+
+/* Edit button */
+
+.edit-btn{
+    background:#3498db;
+    padding:8px 12px;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.edit-btn:hover{
+    background:#21618c;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    text-align:center;
+    color:white;
+    background:rgba(0,0,0,.75);
+    padding:18px;
+    margin-top:40px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.navbar{
+    flex-direction:column;
+}
+
+.nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:15px;
+}
+
+.container{
+    width:95%;
+}
+
+}
+
+@media(max-width:600px){
+
+.title h1{
+    font-size:28px;
+}
+
+.profile-card img{
+    width:90px;
+    height:90px;
+}
+
+button{
+    width:100%;
+}
+
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAYP Farm Management | Expenses</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+ <body style="
+    background-image: url('download (2).png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+">
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h1>RAYP</h1>
+            <p>Farm Management System</p>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="dashboard.html">🏠 <span>Dashboard</span></a>
+            <a href="income.html">💰 <span>Income</span></a>
+            <a href="expenses.html" class="active">💸 <span>Expenses</span></a>
+            <a href="workers.html">👨‍🌾 <span>Workers</span></a>
+            <a href="inventory.html">📦 <span>Inventory</span></a>
+            <a href="crops.html">🌱 <span>Crops</span></a>
+            <a href="reports.html">📊 <span>Reports</span></a>
+            <a href="settings.html">⚙️ <span>Settings</span></a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="btn-danger" onclick="logout()">
+                🚪 Logout
+            </button>
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Top Bar -->
+        <div class="top-bar">
+
+            <h2>Expense Records</h2>
+
+            <div class="user-profile">
+                <img id="userPhoto"
+                     src="images/default-profile.png"
+                     alt="Profile Photo">
+            </div>
+
+        </div>
+
+        <!-- Total Expenses -->
+        <div class="summary-card">
+
+            <h3>Total Expenses</h3>
+
+            <h2 id="totalExpense">UGX 0</h2>
+
+        </div>
+
+        <!-- Expense Form -->
+        <div class="form-container">
+
+            <form id="expenseForm">
+
+                <input type="text" id="item" placeholder="Expense Item" required>
+
+                <select id="category" required>
+
+                    <option value="">Select Category</option>
+                    <option>Seeds</option>
+                    <option>Fertilizer</option>
+                    <option>Pesticides</option>
+                    <option>Animal Feed</option>
+                    <option>Fuel</option>
+                    <option>Workers</option>
+                    <option>Equipment</option>
+                    <option>Transport</option>
+                    <option>Utilities</option>
+                    <option>Medical</option>
+                    <option>Other</option>
+
+                </select>
+
+                <input type="number" id="amount" placeholder="Amount (UGX)" required>
+
+                <input type="date" id="date" required>
+
+                <button type="submit">➕ Save Expense</button>
+
+            </form>
+
+        </div>
+
+        <!-- Search + Tools -->
+        <div class="table-tools">
+
+            <input type="text" id="searchExpense" placeholder="🔍 Search Expenses">
+
+            <button onclick="exportExpensesCSV()">📄 Export CSV</button>
+
+            <button onclick="window.print()">🖨 Print</button>
+
+        </div>
+
+        <!-- Table -->
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Item</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="expenseTableBody"></tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="profile.js"></script>
+<script src="expense.js"></script>
+
+</body>
+</html>

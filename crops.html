@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Records</title>
+    <link rel="stylesheet" href="style.css">
+      <body style="
+    background-image: url('crops.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+">
+</style>
+</head>
+<div class="wrapper">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h1>RAYP</h1>
+            <p>Farm Management System</p>
+        </div>
+
+        <nav class="nav-menu">
+
+            <a href="dashboard.html" class="active">
+                🏠 <span>Dashboard</span>
+            </a>
+
+            <a href="income.html">
+                💰 <span>Income</span>
+            </a>
+
+            <a href="expenses.html">
+                💸 <span>Expenses</span>
+            </a>
+
+            <a href="workers.html">
+                👨‍🌾 <span>Workers</span>
+            </a>
+
+            <a href="inventory.html">
+                📦 <span>Inventory</span>
+            </a>
+
+            <a href="crops.html">
+                🌱 <span>Crops</span>
+            </a>
+
+            <a href="reports.html">
+                📊 <span>Reports</span>
+            </a>
+
+            <a href="settings.html">
+                ⚙️ <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <button class="btn-danger"
+                onclick="window.location.href='index.html'">
+
+                🚪 Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+ <main class="main">
+
+<div class="user-profile">
+    <img id="userPhoto" src="" alt="Profile Photo">
+</div>
+<h2>Crop Records</h2>
+
+<div class="form-section">
+
+    <input type="text"
+           id="crop"
+           placeholder="Crop Name">
+
+    <input type="number"
+           id="acreage"
+           placeholder="Acreage">
+
+    <input type="date"
+           id="planted">
+
+    <button onclick="addCrop()">
+        Add Crop
+    </button>
+
+</div>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Crop</th>
+            <th>Acreage</th>
+            <th>Planting Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody id="cropTable"></tbody>
+
+</table>
+
+<script src="crops.js"></script>
+<script src="auth.js"></script>
+<script src="profile.js"></script>
+</body>
+</html>

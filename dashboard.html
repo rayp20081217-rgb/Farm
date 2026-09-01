@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RAYP Farm | Dashboard</title>
+
+<link rel="icon" href="logo.png">
+
+<link rel="stylesheet" href="style.css">
+
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="wrapper">
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+
+<div class="logo">
+
+<img src="logo.png" alt="RAYP Farm">
+
+<h1>RAYP</h1>
+
+<p>Farm Management System</p>
+
+</div>
+
+
+
+<nav class="nav-menu">
+
+
+<a href="dashboard.html" class="active">
+
+<i class="fas fa-home"></i>
+Dashboard
+
+</a>
+
+
+<a href="income.html">
+
+<i class="fas fa-money-bill-wave"></i>
+Income
+
+</a>
+
+
+<a href="expenses.html">
+
+<i class="fas fa-file-invoice-dollar"></i>
+Expenses
+
+</a>
+
+
+<a href="workers.html">
+
+<i class="fas fa-users"></i>
+Workers
+
+</a>
+
+
+<a href="inventory.html">
+
+<i class="fas fa-box"></i>
+Inventory
+
+</a>
+
+
+<a href="crops.html">
+
+<i class="fas fa-seedling"></i>
+Crops
+
+</a>
+
+
+<a href="livestock.html">
+
+<i class="fas fa-cow"></i>
+Livestock
+
+</a>
+
+
+<a href="reports.html">
+
+<i class="fas fa-chart-line"></i>
+Reports
+
+</a>
+
+
+<a href="settings.html">
+
+<i class="fas fa-cog"></i>
+Settings
+
+</a>
+
+
+</nav>
+
+
+
+<div class="sidebar-footer">
+
+<button onclick="logout()" class="btn-danger">
+
+<i class="fas fa-sign-out-alt"></i>
+
+Logout
+
+</button>
+
+
+</div>
+
+
+</aside>
+
+
+
+
+
+<!-- ================= MAIN ================= -->
+
+
+<main class="main">
+
+
+
+<!-- TOP BAR -->
+
+
+<header class="top-bar">
+
+
+<button class="menu-btn" onclick="toggleMenu()">
+
+<i class="fas fa-bars"></i>
+
+</button>
+
+
+
+<div class="search-box">
+
+<i class="fas fa-search"></i>
+
+<input type="text"
+placeholder="Search farm records...">
+
+</div>
+
+
+
+<div class="top-actions">
+
+
+<button>
+
+<i class="fas fa-bell"></i>
+
+</button>
+
+
+
+<button id="themeBtn">
+
+<i class="fas fa-moon"></i>
+
+</button>
+
+
+
+<div class="user-profile">
+
+
+<img id="userPhoto"
+src="images/default-profile.png"
+alt="Profile">
+
+
+<div>
+
+<h4 id="userName">
+
+Admin
+
+</h4>
+
+<span>Farm Manager</span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<!-- WELCOME -->
+
+
+<section class="welcome-section">
+
+
+<h1 id="typingText">
+
+Welcome to RAYP Farm
+
+</h1>
+
+
+<p>
+
+<i class="fas fa-calendar"></i>
+
+<span id="dateTime"></span>
+
+</p>
+
+
+</section>
+
+
+
+
+
+<!-- ================= CARDS ================= -->
+
+
+<section class="cards">
+
+
+
+<div class="summary-card">
+
+<i class="fas fa-money-bill-wave"></i>
+
+<h3>Total Income</h3>
+
+<h2 id="totalIncome">
+
+UGX 0
+
+</h2>
+
+</div>
+
+
+
+
+<div class="summary-card">
+
+<i class="fas fa-wallet"></i>
+
+<h3>Total Expenses</h3>
+
+<h2 id="totalExpenses">
+
+UGX 0
+
+</h2>
+
+</div>
+
+
+
+
+<div class="summary-card">
+
+<i class="fas fa-chart-line"></i>
+
+<h3>Net Balance</h3>
+
+<h2 id="totalProfit">
+
+UGX 0
+
+</h2>
+
+</div>
+
+
+
+
+<div class="summary-card">
+
+<i class="fas fa-users"></i>
+
+<h3>Workers</h3>
+
+<h2 id="totalWorkers">
+
+0
+
+</h2>
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- QUICK ACTIONS -->
+
+
+<section class="quick-actions">
+
+
+<h2>
+
+Quick Actions
+
+</h2>
+
+
+
+<div class="action-buttons">
+
+
+<a href="income.html">
+
+<i class="fas fa-plus"></i>
+
+Add Income
+
+</a>
+
+
+
+<a href="expenses.html">
+
+<i class="fas fa-minus"></i>
+
+Add Expense
+
+</a>
+
+
+
+<a href="workers.html">
+
+<i class="fas fa-user-plus"></i>
+
+Add Worker
+
+</a>
+
+
+
+<a href="reports.html">
+
+<i class="fas fa-file-pdf"></i>
+
+Generate Report
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- LOWER DASHBOARD -->
+
+
+<section class="dashboard-grid">
+
+
+
+<div class="panel">
+
+
+<h2>
+
+<i class="fas fa-history"></i>
+
+Recent Activities
+
+</h2>
+
+
+<ul id="activities">
+
+
+<li>
+
+No activities recorded yet.
+
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div class="panel">
+
+
+<h2>
+
+<i class="fas fa-chart-area"></i>
+
+Farm Performance
+
+</h2>
+
+
+<canvas id="farmChart"></canvas>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- FARM SUMMARY -->
+
+
+<section class="farm-summary">
+
+
+<h2>
+
+🌱 Farm Summary
+
+</h2>
+
+
+<div class="summary-list">
+
+
+<p>
+
+🌾 Crops:
+
+<span id="cropCount">0</span>
+
+</p>
+
+
+<p>
+
+🐄 Livestock:
+
+<span id="animalCount">0</span>
+
+</p>
+
+
+<p>
+
+📦 Inventory Items:
+
+<span id="inventoryCount">0</span>
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<footer>
+
+
+© 2026 <strong>RAYP Farm</strong>
+
+<br>
+
+Farm Management System v2.0
+
+
+</footer>
+
+
+
+</main>
+
+
+</div>
+
+
+
+
+
+<script src="dashboard.js"></script>
+
+<script src="auth.js"></script>
+
+<script src="profile.js"></script>
+
+
+
+<script>
+
+
+function toggleMenu(){
+
+document.getElementById("sidebar")
+.classList.toggle("show");
+
+}
+
+
+
+function updateTime(){
+
+let now=new Date();
+
+document.getElementById("dateTime").innerHTML=
+
+now.toLocaleDateString()
+
++" | "
+
++now.toLocaleTimeString();
+
+}
+
+
+setInterval(updateTime,1000);
+
+updateTime();
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
