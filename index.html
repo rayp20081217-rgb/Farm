@@ -1,230 +1,285 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
+<title>RAYP Farm | Farm Monetary System</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="logo.png">
 
-    <title>RAYP Farm | Farm Monetary System</title>
+<meta name="theme-color" content="#2e7d32">
 
-    <link rel="icon" type="image/png" href="logo.png">
+<meta name="description"
+    content="RAYP Farm Farm Monetary System">
 
-    <meta name="theme-color" content="#2e7d32">
+<!-- Main CSS Files -->
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="style.css">
 
-    <meta name="description"
-        content="RAYP Farm Farm Monetary System">
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <link rel="stylesheet" href="index.css">
+</head><body class="login-page"><!-- Floating Background Icons -->
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<div class="floating-icons">
 
-</head>
+    <i class="fas fa-seedling"></i>
+    <i class="fas fa-cow"></i>
+    <i class="fas fa-tractor"></i>
+    <i class="fas fa-wheat-awn"></i>
+    <i class="fas fa-leaf"></i>
+    <i class="fas fa-apple-whole"></i>
 
-<body class="login-page">
+</div>
 
-    <!-- Floating Background Icons -->
 
-    <div class="floating-icons">
+<!-- Theme Toggle -->
 
-        <i class="fas fa-seedling"></i>
-        <i class="fas fa-cow"></i>
-        <i class="fas fa-tractor"></i>
-        <i class="fas fa-wheat-awn"></i>
-        <i class="fas fa-leaf"></i>
-        <i class="fas fa-apple-whole"></i>
+<button class="theme-btn" id="themeBtn" title="Change Theme"
+    type="button">
 
-    </div>
+    <i class="fas fa-moon"></i>
 
-    <!-- Theme Toggle -->
+</button>
 
-    <button class="theme-btn" id="themeBtn" title="Change Theme">
 
-        <i class="fas fa-moon"></i>
+<!-- Login Card -->
 
-    </button>
+<div class="login-container">
 
-    <!-- Login Card -->
+    <header class="navbar">
 
-    <div class="login-container">
+        <div class="logo">
 
-        <header class="navbar">
+            <img src="logo.png" alt="RAYP Farm">
 
-            <div class="logo">
+            <h2>RAYP Farm</h2>
 
-                <img src="logo.png" alt="RAYP Farm">
+        </div>
 
-                <h2>RAYP Farm</h2>
+    </header>
+
+
+    <main>
+
+        <h1>Welcome Back!</h1>
+
+        <p class="welcome-text">
+
+            Sign in to manage your Farm Monetary System.
+
+        </p>
+
+
+        <!-- Login Form -->
+
+        <form id="loginForm">
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                autocomplete="username"
+                required>
+
+
+            <!-- Password Field -->
+
+            <div class="password-box">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                    autocomplete="current-password"
+                    required>
+
+                <i class="fas fa-eye"
+                    id="togglePassword"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Show password"></i>
 
             </div>
 
-        </header>
 
-        <main>
+            <!-- Login Options -->
 
-            <h1>Welcome Back!</h1>
+            <div class="options">
 
-            <p class="welcome-text">
+                <label>
 
-                Sign in to manage your Farm Monetary System.
+                    <input type="checkbox" id="remember">
 
-            </p>
+                    Remember Me
 
-            <form id="loginForm">
+                </label>
 
-                <input
-                    type="text"
-                    id="username"
-                    placeholder="Username"
-                    autocomplete="username"
-                    required>
 
-                <div class="password-box">
+                <a href="forgot-password.html">
 
-                    <input
-                        type="password"
-                        id="password"
-                        placeholder="Password"
-                        autocomplete="current-password"
-                        required>
-
-                    <i class="fas fa-eye" id="togglePassword"></i>
-
-                </div>
-
-                <div class="options">
-
-                    <label>
-
-                        <input type="checkbox" id="remember">
-
-                        Remember Me
-
-                    </label>
-
-                    <a href="forgot-password.html">
-
-                        Forgot Password?
-
-                    </a>
-
-                </div>
-
-                <button
-                    type="submit"
-                    id="loginBtn">
-
-                    <span id="btnText">
-
-                        Login
-
-                    </span>
-
-                    <span class="loader" id="loader"></span>
-
-                </button>
-
-            </form>
-
-            <p id="msg"></p>
-
-            <div class="register-link">
-
-                Don't have an account?
-
-                <a href="register.html">
-
-                    Create Account
+                    Forgot Password?
 
                 </a>
 
             </div>
 
-        </main>
 
-        <footer>
+            <!-- Login Button -->
 
-            © 2026 <strong>RAYP Farm</strong>. All Rights Reserved.
+            <button
+                type="submit"
+                id="loginBtn">
 
-        </footer>
+                <span id="btnText">
 
-    </div>
+                    Login
 
-    <script src="login.js"></script>
-    <script src="settings.js"></script>
+                </span>
 
-    <script>
+                <span class="loader" id="loader"></span>
 
-        /* PASSWORD TOGGLE */
+            </button>
 
-        const password = document.getElementById("password");
-        const eye = document.getElementById("togglePassword");
-
-        eye.onclick = function () {
-
-            if (password.type === "password") {
-
-                password.type = "text";
-
-                eye.classList.replace("fa-eye", "fa-eye-slash");
-
-            } else {
-
-                password.type = "password";
-
-                eye.classList.replace("fa-eye-slash", "fa-eye");
-
-            }
-
-        };
+        </form>
 
 
+        <!-- Login Message -->
 
-        /* DARK MODE */
-
-        const themeBtn = document.getElementById("themeBtn");
-
-        themeBtn.onclick = function () {
-
-            document.body.classList.toggle("light-mode");
-
-            if (document.body.classList.contains("light-mode")) {
-
-                themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
-
-            } else {
-
-                themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
-
-            }
-
-        };
+        <p id="msg" role="status"></p>
 
 
+        <!-- Register Link -->
 
-        /* LOGIN ANIMATION */
+        <div class="register-link">
 
-        const loginForm = document.getElementById("loginForm");
+            Don't have an account?
 
-        const loader = document.getElementById("loader");
+            <a href="register.html">
 
-        const btnText = document.getElementById("btnText");
+                Create Account
 
-        loginForm.addEventListener("submit", function (e) {
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        © 2026 <strong>RAYP Farm</strong>. All Rights Reserved.
+
+    </footer>
+
+</div>
+
+
+<!-- JavaScript Files -->
+
+<script src="login.js"></script>
+<script src="settings.js"></script>
+
+
+<!-- Page Functionality -->
+
+<script>
+
+    /* =========================
+       PASSWORD VISIBILITY
+    ========================= */
+
+    const password = document.getElementById("password");
+
+    const eye = document.getElementById("togglePassword");
+
+    function togglePasswordVisibility() {
+
+        if (password.type === "password") {
+
+            password.type = "text";
+
+            eye.classList.replace("fa-eye", "fa-eye-slash");
+
+            eye.setAttribute("aria-label", "Hide password");
+
+        } else {
+
+            password.type = "password";
+
+            eye.classList.replace("fa-eye-slash", "fa-eye");
+
+            eye.setAttribute("aria-label", "Show password");
+
+        }
+
+    }
+
+    eye.addEventListener("click", togglePasswordVisibility);
+
+    eye.addEventListener("keydown", function(e) {
+
+        if (e.key === "Enter" || e.key === " ") {
 
             e.preventDefault();
 
-            loader.style.display = "inline-block";
+            togglePasswordVisibility();
 
-            btnText.style.display = "none";
+        }
 
-            login();
+    });
 
-        });
 
-    </script>
+    /* =========================
+       DARK / LIGHT MODE
+    ========================= */
 
-</body>
+    const themeBtn = document.getElementById("themeBtn");
 
-</html>
+    themeBtn.addEventListener("click", function() {
+
+        document.body.classList.toggle("light-mode");
+
+        if (document.body.classList.contains("light-mode")) {
+
+            themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+
+        } else {
+
+            themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+
+        }
+
+    });
+
+
+    /* =========================
+       LOGIN ANIMATION
+    ========================= */
+
+    const loginForm = document.getElementById("loginForm");
+
+    const loader = document.getElementById("loader");
+
+    const btnText = document.getElementById("btnText");
+
+    const loginBtn = document.getElementById("loginBtn");
+
+    loginForm.addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+        loader.style.display = "inline-block";
+
+        btnText.style.display = "none";
+
+        loginBtn.disabled = true;
+
+        login();
+
+    });
+
+</script>
+
+</body></html>
